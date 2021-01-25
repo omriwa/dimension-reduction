@@ -35,7 +35,10 @@ classifier.fit(X_train, Y_train)
 # Prediction
 y_pred = classifier.predict(X_test)
 
-#
+# Checking accuracy
+from sklearn.metrics import accuracy_score, confusion_matrix
+
+print(confusion_matrix(Y_test,y_pred),'\n',accuracy_score(Y_test,y_pred))
 
 # Visualising the Training set results
 from matplotlib.colors import ListedColormap

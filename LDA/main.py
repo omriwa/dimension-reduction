@@ -19,12 +19,12 @@ sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
-# Use PCA
-from sklearn.decomposition import PCA
+# Use LDA
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 
-pca = PCA(n_components=2)
-X_train = pca.fit_transform(X_train)
-X_test = pca.transform(X_test)
+lda = LDA(n_components=2)
+X_train = lda.fit_transform(X_train,Y_train)
+X_test = lda.transform(X_test)
 
 # Using model
 from sklearn.linear_model import LogisticRegression
